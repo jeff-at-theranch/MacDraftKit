@@ -1,0 +1,1105 @@
+{
+  "builtTestProducts" : [
+    {
+      "binaryPath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKitPackageTests.xctest/Contents/MacOS/MacDraftKitPackageTests",
+      "packagePath" : "/Users/jeffr/MacDraftKit",
+      "productName" : "MacDraftKitPackageTests"
+    }
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.MacDraftKit-arm64-apple-macosx-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKit.build/sources",
+      "importPath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/Sources/MacDraftKit/EmbeddedPDF.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/Sources/MacDraftKit/MacDraftDocument.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/Sources/MacDraftKit/MacDraftError.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/Sources/MacDraftKit/PDFExtractor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKit.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "MacDraftKit",
+      "moduleOutputPath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/Modules/MacDraftKit.swiftmodule",
+      "objects" : [
+        "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKit.build/EmbeddedPDF.swift.o",
+        "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKit.build/MacDraftDocument.swift.o",
+        "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKit.build/MacDraftError.swift.o",
+        "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKit.build/PDFExtractor.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j14",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKit.build/include/MacDraftKit-Swift.h",
+        "-color-diagnostics",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "macdraftkit"
+      ],
+      "outputFileMapPath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKit.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKit.build/EmbeddedPDF.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKit.build/MacDraftDocument.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKit.build/MacDraftError.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKit.build/PDFExtractor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/Modules/MacDraftKit.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/jeffr/MacDraftKit/Sources/MacDraftKit/EmbeddedPDF.swift",
+        "/Users/jeffr/MacDraftKit/Sources/MacDraftKit/MacDraftDocument.swift",
+        "/Users/jeffr/MacDraftKit/Sources/MacDraftKit/MacDraftError.swift",
+        "/Users/jeffr/MacDraftKit/Sources/MacDraftKit/PDFExtractor.swift"
+      ],
+      "tempsPath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKit.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.MacDraftKitPackageTests-arm64-apple-macosx-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKitPackageTests.build/sources",
+      "importPath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKitPackageTests.derived/runner.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/Modules/MacDraftKitTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKitPackageTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "MacDraftKitPackageTests",
+      "moduleOutputPath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/Modules/MacDraftKitPackageTests.swiftmodule",
+      "objects" : [
+        "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKitPackageTests.build/runner.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j14",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKitPackageTests.build/include/MacDraftKitPackageTests-Swift.h",
+        "-color-diagnostics",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "macdraftkit"
+      ],
+      "outputFileMapPath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKitPackageTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKitPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/Modules/MacDraftKitPackageTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKitPackageTests.derived/runner.swift"
+      ],
+      "tempsPath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKitPackageTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.MacDraftKitTests-arm64-apple-macosx-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKitTests.build/sources",
+      "importPath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/Tests/MacDraftKitTests/MacDraftDocumentTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/Modules/MacDraftKit.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKitTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "MacDraftKitTests",
+      "moduleOutputPath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/Modules/MacDraftKitTests.swiftmodule",
+      "objects" : [
+        "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKitTests.build/MacDraftDocumentTests.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j14",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-color-diagnostics",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "macdraftkit"
+      ],
+      "outputFileMapPath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKitTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKitTests.build/MacDraftDocumentTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/Modules/MacDraftKitTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/jeffr/MacDraftKit/Tests/MacDraftKitTests/MacDraftDocumentTests.swift"
+      ],
+      "tempsPath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKitTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.macdraftextract-arm64-apple-macosx-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftextract.build/sources",
+      "importPath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/Sources/macdraftextract/main.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/Modules/MacDraftKit.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftextract.build/sources"
+        }
+      ],
+      "isLibrary" : false,
+      "moduleName" : "macdraftextract",
+      "moduleOutputPath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/Modules/macdraftextract.swiftmodule",
+      "objects" : [
+        "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftextract.build/main.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j14",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-Xfrontend",
+        "-entry-point-function-name",
+        "-Xfrontend",
+        "macdraftextract_main",
+        "-parse-as-library",
+        "-color-diagnostics",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "macdraftkit"
+      ],
+      "outputFileMapPath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftextract.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftextract.build/main.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/Modules/macdraftextract.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/jeffr/MacDraftKit/Sources/macdraftextract/main.swift"
+      ],
+      "tempsPath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftextract.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.macdraftinfo-arm64-apple-macosx-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftinfo.build/sources",
+      "importPath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/Sources/macdraftinfo/main.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/Modules/MacDraftKit.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftinfo.build/sources"
+        }
+      ],
+      "isLibrary" : false,
+      "moduleName" : "macdraftinfo",
+      "moduleOutputPath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/Modules/macdraftinfo.swiftmodule",
+      "objects" : [
+        "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftinfo.build/main.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j14",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-Xfrontend",
+        "-entry-point-function-name",
+        "-Xfrontend",
+        "macdraftinfo_main",
+        "-parse-as-library",
+        "-color-diagnostics",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "macdraftkit"
+      ],
+      "outputFileMapPath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftinfo.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftinfo.build/main.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/Modules/macdraftinfo.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/jeffr/MacDraftKit/Sources/macdraftinfo/main.swift"
+      ],
+      "tempsPath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftinfo.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "MacDraftKit" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "MacDraftKit",
+      "-package-name",
+      "macdraftkit",
+      "-c",
+      "/Users/jeffr/MacDraftKit/Sources/MacDraftKit/EmbeddedPDF.swift",
+      "/Users/jeffr/MacDraftKit/Sources/MacDraftKit/MacDraftDocument.swift",
+      "/Users/jeffr/MacDraftKit/Sources/MacDraftKit/MacDraftError.swift",
+      "/Users/jeffr/MacDraftKit/Sources/MacDraftKit/PDFExtractor.swift",
+      "-I",
+      "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx13.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j14",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKit.build/include/MacDraftKit-Swift.h",
+      "-color-diagnostics",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "macdraftkit",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "MacDraftKitPackageTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "MacDraftKitPackageTests",
+      "-package-name",
+      "macdraftkit",
+      "-c",
+      "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKitPackageTests.derived/runner.swift",
+      "-I",
+      "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx13.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j14",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKitPackageTests.build/include/MacDraftKitPackageTests-Swift.h",
+      "-color-diagnostics",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "macdraftkit",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "MacDraftKitTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "MacDraftKitTests",
+      "-package-name",
+      "macdraftkit",
+      "-c",
+      "/Users/jeffr/MacDraftKit/Tests/MacDraftKitTests/MacDraftDocumentTests.swift",
+      "-I",
+      "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j14",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-color-diagnostics",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "macdraftkit",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "macdraftextract" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "macdraftextract",
+      "-package-name",
+      "macdraftkit",
+      "-c",
+      "/Users/jeffr/MacDraftKit/Sources/macdraftextract/main.swift",
+      "-I",
+      "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx13.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j14",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-Xfrontend",
+      "-entry-point-function-name",
+      "-Xfrontend",
+      "macdraftextract_main",
+      "-parse-as-library",
+      "-color-diagnostics",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "macdraftkit",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "macdraftinfo" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "macdraftinfo",
+      "-package-name",
+      "macdraftkit",
+      "-c",
+      "/Users/jeffr/MacDraftKit/Sources/macdraftinfo/main.swift",
+      "-I",
+      "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx13.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j14",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-Xfrontend",
+      "-entry-point-function-name",
+      "-Xfrontend",
+      "macdraftinfo_main",
+      "-parse-as-library",
+      "-color-diagnostics",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "macdraftkit",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "MacDraftKit" : [
+
+    ],
+    "MacDraftKitPackageTests" : [
+      "MacDraftKitTests",
+      "MacDraftKit"
+    ],
+    "MacDraftKitTests" : [
+      "MacDraftKit"
+    ],
+    "macdraftextract" : [
+      "MacDraftKit"
+    ],
+    "macdraftinfo" : [
+      "MacDraftKit"
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+    "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKitPackageTests.derived/runner.swift" : {
+      "inputs" : [
+
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKitPackageTests.derived/runner.swift"
+        }
+      ]
+    }
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKit.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/Sources/MacDraftKit/EmbeddedPDF.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/Sources/MacDraftKit/MacDraftDocument.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/Sources/MacDraftKit/MacDraftError.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/Sources/MacDraftKit/PDFExtractor.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKit.build/sources"
+    },
+    "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKitPackageTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKitPackageTests.derived/runner.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKitPackageTests.build/sources"
+    },
+    "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKitPackageTests.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKit.build/EmbeddedPDF.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKit.build/MacDraftDocument.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKit.build/MacDraftError.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKit.build/PDFExtractor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKitPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKitTests.build/MacDraftDocumentTests.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKitPackageTests.product/Objects.LinkFileList"
+    },
+    "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKitTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/Tests/MacDraftKitTests/MacDraftDocumentTests.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKitTests.build/sources"
+    },
+    "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftextract-entitlement.plist" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<entitlement-plist>"
+        },
+        {
+          "kind" : "virtual",
+          "name" : "<com.apple.security.get-task-allow>"
+        }
+      ],
+      "outputFilePath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftextract-entitlement.plist"
+    },
+    "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftextract.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/Sources/macdraftextract/main.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftextract.build/sources"
+    },
+    "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftextract.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKit.build/EmbeddedPDF.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKit.build/MacDraftDocument.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKit.build/MacDraftError.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKit.build/PDFExtractor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftextract.build/main.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftextract.product/Objects.LinkFileList"
+    },
+    "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftinfo-entitlement.plist" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<entitlement-plist>"
+        },
+        {
+          "kind" : "virtual",
+          "name" : "<com.apple.security.get-task-allow>"
+        }
+      ],
+      "outputFilePath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftinfo-entitlement.plist"
+    },
+    "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftinfo.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/Sources/macdraftinfo/main.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftinfo.build/sources"
+    },
+    "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftinfo.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKit.build/EmbeddedPDF.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKit.build/MacDraftDocument.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKit.build/MacDraftError.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/MacDraftKit.build/PDFExtractor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftinfo.build/main.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftinfo.product/Objects.LinkFileList"
+    },
+    "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+    }
+  }
+}

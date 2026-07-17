@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftinfo.build/primary.swiftdeps"
+  },
+  "/Users/jeffr/MacDraftKit/Sources/macdraftinfo/main.swift": {
+    "dependencies": "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftinfo.build/main.d",
+    "object": "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftinfo.build/main.swift.o",
+    "swiftmodule": "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftinfo.build/main~partial.swiftmodule",
+    "swift-dependencies": "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftinfo.build/main.swiftdeps",
+    "diagnostics": "/Users/jeffr/MacDraftKit/.build/arm64-apple-macosx/debug/macdraftinfo.build/main.dia"
+  }
+}
