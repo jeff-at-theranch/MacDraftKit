@@ -2,8 +2,13 @@ import Foundation
 
 /// A parsed MacDraft MD70-family document.
 public struct MacDraftDocument: Sendable {
+    /// The parsed fixed header at the beginning of the document.
+    public let header: MacDraftHeader
+
     /// The identifier stored at the beginning of the document, such as `MD7020`.
-    public let formatIdentifier: String
+    public var formatIdentifier: String {
+        header.formatIdentifier
+    }
 
     /// The embedded PDF payload, when one is present.
     public let embeddedPDF: EmbeddedPDF?
@@ -16,17 +21,7 @@ public struct MacDraftDocument: Sendable {
 
     /// Creates a document from in-memory bytes.
     public init(data: Data) throws {
-        guard data.count >= 6 else {
-            throw MacDraftError.fileTooSmall
-        }
-
-        let identifierData = data.prefix(6)
-        guard let identifier = String(data: identifierData, encoding: .ascii),
-              identifier.hasPrefix("MD70") else {
-            throw MacDraftError.invalidFormatIdentifier
-        }
-
-        self.formatIdentifier = identifier
+        self.header = try MacDraftHeader(data: data)
         self.embeddedPDF = PDFExtractor.extractFirstPDF(from: data)
     }
 }
