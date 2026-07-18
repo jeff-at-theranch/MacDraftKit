@@ -21,9 +21,11 @@ struct MacDraftInfoCommand {
                 print()
                 print("Objects: \(objectSection.declaredObjectCount)")
 
-                if let object = objectSection.firstObject {
+                for (index, object) in objectSection.objects.enumerated() {
                     print()
-                    print("Object #1 (type unknown)")
+                    let typeName = object.type?.displayName
+                        ?? "Unknown type 0x\(String(object.rawTypeCode, radix: 16, uppercase: true))"
+                    print("Object #\(index + 1) (\(typeName))")
                     print("------------------------")
                     print("Offset: 0x\(String(object.offset, radix: 16, uppercase: true))")
                     print("Center: \(format(object.centerX)), \(format(object.centerY)) pt")
@@ -31,9 +33,11 @@ struct MacDraftInfoCommand {
                     print("Pen width: \(format(object.penWidth)) pt")
                 }
 
-                if objectSection.declaredObjectCount > 1 {
+                let undecodedCount =
+                    objectSection.declaredObjectCount - objectSection.objects.count
+                if undecodedCount > 0 {
                     print()
-                    print("Additional object records are not yet decoded.")
+                    print("\(undecodedCount) object record(s) could not be decoded.")
                 }
             }
 

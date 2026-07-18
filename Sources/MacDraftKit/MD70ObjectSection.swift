@@ -1,39 +1,34 @@
 import Foundation
 
-/// The portion of an MD70 document that contains drawing objects.
-///
-/// Only fields confirmed through controlled binary comparisons are exposed.
-/// The boundaries of subsequent object records are not yet known, so this
-/// type currently decodes only the first object's confirmed geometry fields.
-public struct MD70ObjectSection: Sendable, Equatable {
-    public static let objectCountOffset = 0x5117
-    public static let firstObjectOffset = 0x511B
+public enum MD70ObjectType: UInt8, Sendable, Equatable, CaseIterable {
+    case line = 0x01
+    case rectangle = 0x0A
+    case roundedRectangle = 0x0B
+    case arc = 0x15
+    case ellipse = 0x18
+    case bezier = 0x20
+    case text = 0x29
+    case polygon = 0x33
 
-    public let declaredObjectCount: UInt32
-    public let firstObject: MD70CandidateObjectRecord?
-
-    static func parse(from data: Data) -> MD70ObjectSection? {
-        guard let count = data.md70UInt32LE(at: objectCountOffset) else {
-            return nil
+    public var displayName: String {
+        switch self {
+        case .line: return "Line"
+        case .rectangle: return "Rectangle"
+        case .roundedRectangle: return "Rounded rectangle"
+        case .arc: return "Arc"
+        case .ellipse: return "Ellipse"
+        case .bezier: return "Bezier"
+        case .text: return "Text"
+        case .polygon: return "Polygon"
         }
-
-        guard count > 0 else {
-            return MD70ObjectSection(declaredObjectCount: count, firstObject: nil)
-        }
-
-        return MD70ObjectSection(
-            declaredObjectCount: count,
-            firstObject: MD70CandidateObjectRecord.parseFirst(from: data)
-        )
     }
 }
 
-/// Confirmed fields from the first MD70 object record.
-///
-/// The object type itself has not yet been identified. The geometry fields
-/// below have been verified with controlled circle and ellipse samples.
+/// Confirmed fields from one fixed-size MD70 drawing-object record.
 public struct MD70CandidateObjectRecord: Sendable, Equatable {
     public let offset: Int
+    public let rawTypeCode: UInt8
+    public let type: MD70ObjectType?
     public let centerX: Double
     public let centerY: Double
     public let radiusX: Double
@@ -42,6 +37,20 @@ public struct MD70CandidateObjectRecord: Sendable, Equatable {
 
     public var width: Double { radiusX * 2 }
     public var height: Double { radiusY * 2 }
+}
+
+/// Confirmed information from the MD70 drawing-object section.
+public struct MD70ObjectSection: Sendable, Equatable {
+    public let declaredObjectCount: Int
+    public let objects: [MD70CandidateObjectRecord]
+
+    public var firstObject: MD70CandidateObjectRecord? {
+        objects.first
+    }
+
+    private static let objectCountOffset = 0x5117
+    private static let firstRecordOffset = 0x511B
+    private static let recordStride = 0x10D
 
     private static let centerYOffset = 0x09
     private static let centerXOffset = 0x11
@@ -49,21 +58,78 @@ public struct MD70CandidateObjectRecord: Sendable, Equatable {
     private static let radiusYOffset = 0xEB
     private static let radiusXOffset = 0xEF
 
-    static func parseFirst(from data: Data) -> MD70CandidateObjectRecord? {
-        let base = MD70ObjectSection.firstObjectOffset
+    public static func parse(from data: Data) -> MD70ObjectSection? {
+        guard let rawCount = readUInt32LittleEndian(
+            from: data,
+            at: objectCountOffset
+        ) else {
+            return nil
+        }
+
+        let declaredCount = Int(rawCount)
+        var records: [MD70CandidateObjectRecord] = []
+        records.reserveCapacity(declaredCount)
+
+        for index in 0..<declaredCount {
+            let (strideProduct, multiplyOverflow) =
+                index.multipliedReportingOverflow(by: recordStride)
+            let (recordOffset, addOverflow) =
+                firstRecordOffset.addingReportingOverflow(strideProduct)
+
+            guard !multiplyOverflow, !addOverflow,
+                  let record = parseRecord(from: data, at: recordOffset)
+            else {
+                break
+            }
+
+            records.append(record)
+        }
+
+        return MD70ObjectSection(
+            declaredObjectCount: declaredCount,
+            objects: records
+        )
+    }
+
+    private static func parseRecord(
+        from data: Data,
+        at recordOffset: Int
+    ) -> MD70CandidateObjectRecord? {
+        guard recordOffset >= 0, recordOffset < data.count else {
+            return nil
+        }
+
+        let rawTypeCode = data[recordOffset]
 
         guard
-            let storedCenterY = data.md70Float64BE(at: base + centerYOffset),
-            let storedCenterX = data.md70Float64BE(at: base + centerXOffset),
-            let penWidth = data.md70Float64BE(at: base + penWidthOffset),
-            let storedRadiusY = data.md70Float32BE(at: base + radiusYOffset),
-            let storedRadiusX = data.md70Float32BE(at: base + radiusXOffset)
+            let storedCenterY = readFloat64BigEndian(
+                from: data,
+                at: recordOffset + centerYOffset
+            ),
+            let storedCenterX = readFloat64BigEndian(
+                from: data,
+                at: recordOffset + centerXOffset
+            ),
+            let penWidth = readFloat64BigEndian(
+                from: data,
+                at: recordOffset + penWidthOffset
+            ),
+            let storedRadiusY = readFloat32BigEndian(
+                from: data,
+                at: recordOffset + radiusYOffset
+            ),
+            let storedRadiusX = readFloat32BigEndian(
+                from: data,
+                at: recordOffset + radiusXOffset
+            )
         else {
             return nil
         }
 
         return MD70CandidateObjectRecord(
-            offset: base,
+            offset: recordOffset,
+            rawTypeCode: rawTypeCode,
+            type: MD70ObjectType(rawValue: rawTypeCode),
             centerX: storedCenterX / 10,
             centerY: storedCenterY / 10,
             radiusX: Double(storedRadiusX) / 10,
@@ -71,41 +137,67 @@ public struct MD70CandidateObjectRecord: Sendable, Equatable {
             penWidth: penWidth
         )
     }
-}
 
-private extension Data {
-    func md70UInt32LE(at offset: Int) -> UInt32? {
-        guard offset >= 0, offset + 4 <= count else { return nil }
-        return UInt32(self[offset])
-            | (UInt32(self[offset + 1]) << 8)
-            | (UInt32(self[offset + 2]) << 16)
-            | (UInt32(self[offset + 3]) << 24)
-    }
-
-    func md70UInt32BE(at offset: Int) -> UInt32? {
-        guard offset >= 0, offset + 4 <= count else { return nil }
-        return (UInt32(self[offset]) << 24)
-            | (UInt32(self[offset + 1]) << 16)
-            | (UInt32(self[offset + 2]) << 8)
-            | UInt32(self[offset + 3])
-    }
-
-    func md70UInt64BE(at offset: Int) -> UInt64? {
-        guard offset >= 0, offset + 8 <= count else { return nil }
-        var value: UInt64 = 0
-        for byteOffset in 0..<8 {
-            value = (value << 8) | UInt64(self[offset + byteOffset])
+    private static func readUInt32LittleEndian(
+        from data: Data,
+        at offset: Int
+    ) -> UInt32? {
+        guard let bytes = bytes(from: data, at: offset, count: 4) else {
+            return nil
         }
-        return value
+
+        return UInt32(bytes[0])
+            | (UInt32(bytes[1]) << 8)
+            | (UInt32(bytes[2]) << 16)
+            | (UInt32(bytes[3]) << 24)
     }
 
-    func md70Float32BE(at offset: Int) -> Float? {
-        guard let bits = md70UInt32BE(at: offset) else { return nil }
+    private static func readFloat32BigEndian(
+        from data: Data,
+        at offset: Int
+    ) -> Float? {
+        guard let bytes = bytes(from: data, at: offset, count: 4) else {
+            return nil
+        }
+
+        let bits = (UInt32(bytes[0]) << 24)
+            | (UInt32(bytes[1]) << 16)
+            | (UInt32(bytes[2]) << 8)
+            | UInt32(bytes[3])
+
         return Float(bitPattern: bits)
     }
 
-    func md70Float64BE(at offset: Int) -> Double? {
-        guard let bits = md70UInt64BE(at: offset) else { return nil }
+    private static func readFloat64BigEndian(
+        from data: Data,
+        at offset: Int
+    ) -> Double? {
+        guard let bytes = bytes(from: data, at: offset, count: 8) else {
+            return nil
+        }
+
+        var bits: UInt64 = 0
+        for byte in bytes {
+            bits = (bits << 8) | UInt64(byte)
+        }
+
         return Double(bitPattern: bits)
+    }
+
+    private static func bytes(
+        from data: Data,
+        at offset: Int,
+        count: Int
+    ) -> Data? {
+        guard offset >= 0, count >= 0 else {
+            return nil
+        }
+
+        let (end, overflow) = offset.addingReportingOverflow(count)
+        guard !overflow, end <= data.count else {
+            return nil
+        }
+
+        return data.subdata(in: offset..<end)
     }
 }
