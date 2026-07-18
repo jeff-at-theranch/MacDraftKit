@@ -17,6 +17,26 @@ struct MacDraftInfoCommand {
                 print("Embedded PDF: no")
             }
 
+            if let objectSection = document.objectSection {
+                print()
+                print("Objects: \(objectSection.declaredObjectCount)")
+
+                if let object = objectSection.firstObject {
+                    print()
+                    print("Object #1 (type unknown)")
+                    print("------------------------")
+                    print("Offset: 0x\(String(object.offset, radix: 16, uppercase: true))")
+                    print("Center: \(format(object.centerX)), \(format(object.centerY)) pt")
+                    print("Size: \(format(object.width)) × \(format(object.height)) pt")
+                    print("Pen width: \(format(object.penWidth)) pt")
+                }
+
+                if objectSection.declaredObjectCount > 1 {
+                    print()
+                    print("Additional object records are not yet decoded.")
+                }
+            }
+
             if let hexRange = options.hexRange {
                 let data = try Data(contentsOf: options.input)
                 let dump = try HexDump(data: data)
@@ -106,6 +126,13 @@ struct MacDraftInfoCommand {
                 )
             }
         }
+    }
+
+    private static func format(_ value: Double) -> String {
+        if value.rounded() == value {
+            return String(Int(value))
+        }
+        return String(value)
     }
 
     private static func parseInteger(_ value: String, name: String) throws -> Int {

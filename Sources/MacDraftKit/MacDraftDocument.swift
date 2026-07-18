@@ -13,6 +13,9 @@ public struct MacDraftDocument: Sendable {
     /// The embedded PDF payload, when one is present.
     public let embeddedPDF: EmbeddedPDF?
 
+    /// Confirmed drawing-object fields decoded from the MD70 object section.
+    public let objectSection: MD70ObjectSection?
+
     /// Creates a document by reading a file from disk.
     public init(contentsOf url: URL) throws {
         let data = try Data(contentsOf: url, options: [.mappedIfSafe])
@@ -23,5 +26,6 @@ public struct MacDraftDocument: Sendable {
     public init(data: Data) throws {
         self.header = try MacDraftHeader(data: data)
         self.embeddedPDF = PDFExtractor.extractFirstPDF(from: data)
+        self.objectSection = MD70ObjectSection.parse(from: data)
     }
 }
