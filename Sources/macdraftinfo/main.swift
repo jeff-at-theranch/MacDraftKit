@@ -114,6 +114,46 @@ struct MacDraftInfoCommand {
                 }
             }
             
+            if let roundedRectangle =
+                object as? MD70RoundedRectangle
+            {
+                if let cornerWidth =
+                    roundedRectangle.cornerWidth
+                {
+                    print(
+                        "Corner width: " +
+                        "\(format(cornerWidth)) pt"
+                    )
+                }
+
+                if let cornerHeight =
+                    roundedRectangle.cornerHeight
+                {
+                    print(
+                        "Corner height: " +
+                        "\(format(cornerHeight)) pt"
+                    )
+                }
+
+                if let cornerRadiusX =
+                    roundedRectangle.cornerRadiusX
+                {
+                    print(
+                        "Corner radius X: " +
+                        "\(format(cornerRadiusX)) pt"
+                    )
+                }
+
+                if let cornerRadiusY =
+                    roundedRectangle.cornerRadiusY
+                {
+                    print(
+                        "Corner radius Y: " +
+                        "\(format(cornerRadiusY)) pt"
+                    )
+                }
+            }
+            
             if let penWidth = object.penWidth {
                 print("Pen width: \(format(penWidth)) pt")
             }

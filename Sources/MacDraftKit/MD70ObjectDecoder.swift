@@ -41,6 +41,12 @@ enum MD70ObjectDecoder {
                 record: record
             )
             
+        case .roundedRectangle:
+            return MD70RoundedRectangleDecoder.decode(
+                header: header,
+                record: record
+            )
+            
         default:
             return decodeUnknown(
                 header: header,
