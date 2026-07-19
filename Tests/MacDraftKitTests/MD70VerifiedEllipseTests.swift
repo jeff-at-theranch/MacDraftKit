@@ -264,9 +264,12 @@ final class MD70VerifiedEllipseTests: XCTestCase {
             offset: 0,
             rawTypeCode: 0,
             type: .ellipse,
-            storedLength: UInt32(recordLength - 12)
+            storedLength: UInt32(
+                max(0, recordLength - 12)
+            )
         )
     }
+    
 
     private func writeFloat64BE(
         _ value: Double,

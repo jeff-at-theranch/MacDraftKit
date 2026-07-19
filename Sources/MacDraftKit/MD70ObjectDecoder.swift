@@ -28,6 +28,12 @@ enum MD70ObjectDecoder {
                 header: header,
                 record: record
             )
+        
+        case .line:
+            return MD70LineDecoder.decode(
+                header: header,
+                record: record
+            )
             
         default:
             return decodeUnknown(
@@ -43,6 +49,36 @@ enum MD70ObjectDecoder {
     ) -> MD70UnknownObject {
         let reader = MD70BinaryReader(data: record)
 
+        if header.type == .line {
+            if let duplicateVertical = reader.float64BE(at: 0xAD) {
+                print(
+                    "Duplicate start vertical: " +
+                    "\(duplicateVertical / storageScale) pt"
+                )
+            }
+
+            if let duplicateHorizontal = reader.float64BE(at: 0xB5) {
+                print(
+                    "Duplicate start horizontal: " +
+                    "\(duplicateHorizontal / storageScale) pt"
+                )
+            }
+
+            if let secondVertical = reader.float64BE(at: 0xCD) {
+                print(
+                    "Candidate end vertical: " +
+                    "\(secondVertical / storageScale) pt"
+                )
+            }
+
+            if let secondHorizontal = reader.float64BE(at: 0xD5) {
+                print(
+                    "Candidate end horizontal: " +
+                    "\(secondHorizontal / storageScale) pt"
+                )
+            }
+        }
+        
         /*
         if header.type == .ellipse {
             if let secondVertical = reader.float64BE(at: 0xCB) {
