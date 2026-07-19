@@ -1,32 +1,60 @@
-# MacDraftKit
+# MacDraftKit Verified Geometry Refactor
 
-MacDraftKit is an open-source Swift library and command-line toolkit for reading MacDraft `.md70` documents. Its first goal is dependable discovery and extraction of the PDF payload embedded in many MD70 files, enabling previews, inspection, and document preservation on modern macOS.
+This drop-in refactor separates MD70 parsing into:
 
-## Build
+- `MD70BinaryReader` — endian-safe binary access
+- `MD70Object` models — headers, points, bounds, rectangle and unknown objects
+- `MD70ObjectDecoder` — object-type dispatch
+- `MD70RectangleDecoder` — confirmed rectangle layout only
+- `MD70ObjectSection` — variable-length record traversal
+- updated `macdraftinfo` output
+- focused geometry and traversal tests
 
-```bash
-swift build
+## Install
+
+From the root of your existing MacDraftKit package:
+
+1. Back up or commit your current work.
+2. Copy the contents of this archive over the package root.
+3. Remove the old `Sources/MacDraftKit/MD70ObjectSection.swift` first if your copy tool does not overwrite it.
+4. Run:
+
+```sh
 swift test
+swift run macdraftinfo /path/to/rectangle.md70
 ```
 
-## Command-line tools
+## Confirmed rectangle layout
 
-Inspect a document:
+Relative to the object record start:
 
-```bash
-swift run macdraftinfo Drawing.md70
+| Offset | Type | Meaning |
+|---:|---|---|
+| `0x09` | Float64 BE | top × 10 |
+| `0x11` | Float64 BE | left × 10 |
+| `0xEF` | Float64 BE | right × 10 |
+| `0x107` | Float64 BE | bottom × 10 |
+
+Record traversal uses:
+
+```text
+totalLength = storedLength + 12
 ```
 
-Extract its embedded PDF:
+The parser intentionally reports no bounds for circle, ellipse, and other unresolved object layouts.
 
-```bash
-swift run macdraftextract Drawing.md70 Drawing.pdf
+## API note
+
+`MD70ObjectSection.objects` is now heterogeneous:
+
+```swift
+[any MD70DrawingObject]
 ```
 
-## Project status
+Use type casts for decoded shapes:
 
-MacDraftKit is early-stage software based on observed files rather than a published MacDraft specification. Format discoveries are documented and tested as the project develops.
-
-## License
-
-MIT License. See `LICENSE`.
+```swift
+if let rectangle = object as? MD70Rectangle {
+    print(rectangle.bounds)
+}
+```
