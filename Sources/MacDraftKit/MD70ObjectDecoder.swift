@@ -35,6 +35,12 @@ enum MD70ObjectDecoder {
                 record: record
             )
             
+        case .circle:
+            return MD70CircleDecoder.decode(
+                header: header,
+                record: record
+            )
+            
         default:
             return decodeUnknown(
                 header: header,

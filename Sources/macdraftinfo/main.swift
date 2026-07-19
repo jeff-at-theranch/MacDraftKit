@@ -93,6 +93,27 @@ struct MacDraftInfoCommand {
                 }
             }
 
+            if let circle = object as? MD70Circle {
+                if let center = circle.center {
+                    print(
+                        "Center: \(format(center.x)), " +
+                        "\(format(center.y)) pt"
+                    )
+                }
+
+                if let radius = circle.radius {
+                    print(
+                        "Radius: \(format(radius)) pt"
+                    )
+                }
+
+                if let diameter = circle.diameter {
+                    print(
+                        "Diameter: \(format(diameter)) pt"
+                    )
+                }
+            }
+            
             if let penWidth = object.penWidth {
                 print("Pen width: \(format(penWidth)) pt")
             }
