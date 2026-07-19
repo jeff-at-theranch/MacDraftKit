@@ -78,10 +78,25 @@ struct MacDraftInfoCommand {
             } else {
                 print("Geometry: object-specific bounds not yet decoded")
             }
+            
+            if let text = object as? MD70Text {
+                if text.rtfData.isEmpty {
+                    print("Embedded RTF: not found")
+                } else {
+                    print("Embedded RTF: yes")
+                    print("RTF length: \(text.rtfData.count) bytes")
+
+                    let prefixData = text.rtfData.prefix(40)
+                    let prefix = String(decoding: prefixData, as: UTF8.self)
+
+                    print("RTF prefix: \(prefix)")
+                }
+            }
 
             if let penWidth = object.penWidth {
                 print("Pen width: \(format(penWidth)) pt")
             }
+            
         }
 
         let undecodedCount = section.declaredObjectCount - section.objects.count

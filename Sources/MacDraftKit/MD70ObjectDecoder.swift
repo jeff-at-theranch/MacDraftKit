@@ -12,10 +12,28 @@ enum MD70ObjectDecoder {
     ) -> any MD70DrawingObject {
         switch header.type {
         case .rectangle:
-            return MD70RectangleDecoder.decode(header: header, record: record)
+            return MD70RectangleDecoder.decode(
+                header: header,
+                record: record
+            )
 
+        case .text:
+            return MD70TextDecoder.decode(
+                header: header,
+                record: record
+            )
+            
+        case .ellipse:
+            return MD70EllipseDecoder.decode(
+                header: header,
+                record: record
+            )
+            
         default:
-            return decodeUnknown(header: header, record: record)
+            return decodeUnknown(
+                header: header,
+                record: record
+            )
         }
     }
 
@@ -25,8 +43,31 @@ enum MD70ObjectDecoder {
     ) -> MD70UnknownObject {
         let reader = MD70BinaryReader(data: record)
 
-        let top = reader.float64BE(at: anchorTopOffset).map { $0 / storageScale }
-        let left = reader.float64BE(at: anchorLeftOffset).map { $0 / storageScale }
+        /*
+        if header.type == .ellipse {
+            if let secondVertical = reader.float64BE(at: 0xCB) {
+                print(
+                    "Candidate second vertical: " +
+                    "\(secondVertical / storageScale) pt"
+                )
+            }
+
+            if let secondHorizontal = reader.float64BE(at: 0xD3) {
+                print(
+                    "Candidate second horizontal: " +
+                    "\(secondHorizontal / storageScale) pt"
+                )
+            }
+        }
+        */
+        
+        let top = reader.float64BE(at: anchorTopOffset).map {
+            $0 / storageScale
+        }
+
+        let left = reader.float64BE(at: anchorLeftOffset).map {
+            $0 / storageScale
+        }
 
         let anchor: MD70Point?
         if let left, let top {
