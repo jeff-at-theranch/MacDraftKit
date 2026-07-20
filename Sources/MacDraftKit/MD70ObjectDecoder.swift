@@ -46,6 +46,16 @@ enum MD70ObjectDecoder {
                 header: header,
                 record: record
             )
+        case .polygon:
+            return MD70PolygonDecoder.decode(
+                header: header,
+                record: record
+            )
+        case .polygonParameters:
+            return MD70PolygonParametersDecoder.decode(
+                header: header,
+                record: record
+            )
             
         default:
             return decodeUnknown(

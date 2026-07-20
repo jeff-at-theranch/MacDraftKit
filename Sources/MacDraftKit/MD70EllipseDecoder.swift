@@ -1,23 +1,20 @@
 import Foundation
 
-enum MD70RoundedRectangleDecoder {
+enum MD70EllipseDecoder {
     private static let topOffset = 0x09
     private static let leftOffset = 0x11
-    private static let rightOffset = 0xEF
-    private static let bottomOffset = 0x107
-
-    private static let cornerWidthOffset = 0x153
-    private static let cornerHeightOffset = 0x15B
+    private static let bottomOffset = 0xCB
+    private static let rightOffset = 0xD3
 
     static func decode(
         header: MD70ObjectHeader,
         record: Data
-    ) -> MD70RoundedRectangle {
+    ) -> MD70Ellipse {
         let reader = MD70BinaryReader(
             data: record
         )
 
-        return MD70RoundedRectangle(
+        return MD70Ellipse(
             header: header,
             anchor:
                 MD70CommonObjectDecoder.decodeAnchor(
@@ -30,16 +27,6 @@ enum MD70RoundedRectangleDecoder {
                     topOffset: topOffset,
                     rightOffset: rightOffset,
                     bottomOffset: bottomOffset
-                ),
-            cornerWidth:
-                MD70CommonObjectDecoder.scaledFloat64(
-                    from: reader,
-                    at: cornerWidthOffset
-                ),
-            cornerHeight:
-                MD70CommonObjectDecoder.scaledFloat64(
-                    from: reader,
-                    at: cornerHeightOffset
                 ),
             style:
                 MD70ObjectStyleDecoder.decode(

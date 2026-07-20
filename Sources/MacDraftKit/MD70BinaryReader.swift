@@ -34,6 +34,23 @@ struct MD70BinaryReader {
         return Double(bitPattern: bits)
     }
 
+    public func float32BE(at offset: Int) -> Float? {
+        guard
+            offset >= 0,
+            offset + 4 <= data.count
+        else {
+            return nil
+        }
+
+        let bits =
+            UInt32(data[offset]) << 24 |
+            UInt32(data[offset + 1]) << 16 |
+            UInt32(data[offset + 2]) << 8 |
+            UInt32(data[offset + 3])
+
+        return Float(bitPattern: bits)
+    }
+    
     func slice(at offset: Int, count: Int) -> Data? {
         guard contains(offset: offset, count: count) else { return nil }
         return data.subdata(in: offset..<(offset + count))

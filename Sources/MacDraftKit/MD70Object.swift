@@ -9,7 +9,8 @@ public enum MD70ObjectType: UInt8, Sendable, Equatable, CaseIterable {
     case ellipse = 0x18
     case bezier = 0x20
     case text = 0x29
-    case polygon = 0x33
+    case polygonParameters = 0x33
+    case polygon = 0x04
 
     public var displayName: String {
         switch self {
@@ -22,6 +23,7 @@ public enum MD70ObjectType: UInt8, Sendable, Equatable, CaseIterable {
         case .bezier: return "Bezier"
         case .text: return "Text"
         case .polygon: return "Polygon"
+        case .polygonParameters: return "Polygon parameters"
         }
     }
 }
@@ -96,27 +98,6 @@ public extension MD70DrawingObject {
     var totalLength: Int { header.totalLength }
 }
 
-public struct MD70Rectangle: MD70DrawingObject, Equatable {
-    public let header: MD70ObjectHeader
-    public let anchor: MD70Point?
-    public let bounds: MD70Bounds?
-    public let penWidth: Double?
-    public let rawRecord: Data
-
-    public init(
-        header: MD70ObjectHeader,
-        anchor: MD70Point?,
-        bounds: MD70Bounds?,
-        penWidth: Double?,
-        rawRecord: Data
-    ) {
-        self.header = header
-        self.anchor = anchor
-        self.bounds = bounds
-        self.penWidth = penWidth
-        self.rawRecord = rawRecord
-    }
-}
 
 public struct MD70UnknownObject: MD70DrawingObject, Equatable {
     public let header: MD70ObjectHeader

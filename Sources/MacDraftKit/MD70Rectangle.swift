@@ -1,26 +1,9 @@
 import Foundation
 
-public struct MD70RoundedRectangle: MD70DrawingObject {
+public struct MD70Rectangle: MD70DrawingObject, Equatable {
     public let header: MD70ObjectHeader
     public let anchor: MD70Point?
     public let bounds: MD70Bounds?
-
-    /// Width of the complete corner arc in points.
-    public let cornerWidth: Double?
-
-    /// Height of the complete corner arc in points.
-    public let cornerHeight: Double?
-
-    /// Horizontal corner radius in points.
-    public var cornerRadiusX: Double? {
-        cornerWidth.map { $0 / 2.0 }
-    }
-
-    /// Vertical corner radius in points.
-    public var cornerRadiusY: Double? {
-        cornerHeight.map { $0 / 2.0 }
-    }
-
     public let style: MD70ObjectStyle
     public let rawRecord: Data
     
@@ -47,4 +30,20 @@ public struct MD70RoundedRectangle: MD70DrawingObject {
     public var fillPresetIndex: UInt8? {
         style.fillPresetIndex
     }
+    
+    /*
+    public init(
+        header: MD70ObjectHeader,
+        anchor: MD70Point?,
+        bounds: MD70Bounds?,
+        penWidth: Double?,
+        rawRecord: Data
+    ) {
+        self.header = header
+        self.anchor = anchor
+        self.bounds = bounds
+        self.penWidth = penWidth
+        self.rawRecord = rawRecord
+    }
+     */
 }
