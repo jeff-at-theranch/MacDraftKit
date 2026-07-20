@@ -1,5 +1,14 @@
 import Foundation
 
+public enum MD70BezierNodeKind:
+    Equatable,
+    Sendable
+{
+    case corner
+    case smooth
+}
+
+
 public struct MD70BezierHandle: Equatable, Sendable {
     public let anchor: MD70Point
     public let controlPoint: MD70Point
@@ -90,6 +99,41 @@ public struct MD70BezierSegment: Equatable, Sendable {
             anchor: end,
             controlPoint: control2
         )
+    }
+    
+    public static func nodeKind(
+        incomingHandle: MD70BezierHandle,
+        outgoingHandle: MD70BezierHandle,
+        collapsedTolerance: Double = 1.0,
+        angularToleranceDegrees: Double = 3.0
+    ) -> MD70BezierNodeKind {
+        if
+            incomingHandle.length <= collapsedTolerance,
+            outgoingHandle.length <= collapsedTolerance
+        {
+            return .corner
+        }
+
+        let incomingAngle =
+            incomingHandle.angleDegrees
+
+        let outgoingAngle =
+            outgoingHandle.angleDegrees
+
+        var difference = abs(
+            incomingAngle - outgoingAngle
+        )
+
+        if difference > 180 {
+            difference = 360 - difference
+        }
+
+        let oppositeDifference =
+            abs(180 - difference)
+
+        return oppositeDifference <= angularToleranceDegrees
+            ? .smooth
+            : .corner
     }
     
     

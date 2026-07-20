@@ -328,13 +328,42 @@ struct MacDraftInfoCommand {
         }
     }
 
-    private static func printBezierDetails(
-        _ bezier: MD70Bezier
-    ) {
-        print("Bezier:")
-        print("  Point count: \(bezier.points.count)")
-        print("  Segment count: \(bezier.segments.count)")
-        print("  Closed: \(bezier.isClosed ? "yes" : "no")")
+   private static func printBezierDetails(
+            _ bezier: MD70Bezier
+        ) {
+            print("Bezier:")
+            print("  Point count: \(bezier.points.count)")
+            print("  Segment count: \(bezier.segments.count)")
+            print("  Closed: \(bezier.isClosed ? "yes" : "no")")
+
+            guard bezier.segments.count > 1 else {
+                return
+            }
+            
+            for index in 0..<(bezier.segments.count - 1) {
+                let previous = bezier.segments[index]
+                let next = bezier.segments[index + 1]
+
+                let kind = MD70BezierSegment.nodeKind(
+                    incomingHandle: previous.incomingHandle,
+                    outgoingHandle: next.outgoingHandle
+                )
+
+                let kindName: String
+
+                switch kind {
+                case .corner:
+                    kindName = "corner"
+                case .smooth:
+                    kindName = "smooth"
+                }
+
+                print(
+                    "  Node \(index + 1): " +
+                    "\(kindName) at " +
+                    PointFormatter.parenthesized(previous.end)
+                )
+            }
 
         for (index, segment) in bezier.segments.enumerated() {
             print("  Segment \(index):")
