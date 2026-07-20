@@ -183,7 +183,10 @@ struct MacDraftInfoCommand {
 
         case let parameters as MD70PolygonParameters:
             printPolygonParameterDetails(parameters)
-
+            
+        case let bezier as MD70Bezier:
+            printBezierDetails(bezier)
+            
         default:
             break
         }
@@ -325,6 +328,59 @@ struct MacDraftInfoCommand {
         }
     }
 
+    private static func printBezierDetails(
+        _ bezier: MD70Bezier
+    ) {
+        print("Bezier:")
+        print("  Point count: \(bezier.points.count)")
+        print("  Segment count: \(bezier.segments.count)")
+        print("  Closed: \(bezier.isClosed ? "yes" : "no")")
+
+        for (index, segment) in bezier.segments.enumerated() {
+            print("  Segment \(index):")
+
+            print(
+                "    Start: " +
+                PointFormatter.parenthesized(segment.start)
+            )
+
+            print(
+                "    Control 1: " +
+                PointFormatter.parenthesized(segment.control1)
+            )
+
+            print(
+                "    Control 2: " +
+                PointFormatter.parenthesized(segment.control2)
+            )
+
+            print(
+                "    End: " +
+                PointFormatter.parenthesized(segment.end)
+            )
+
+            print(
+                "    Outgoing handle length: " +
+                "\(NumberFormatter.coordinate(segment.outgoingHandle.length)) pt"
+            )
+
+            print(
+                "    Outgoing handle angle: " +
+                "\(NumberFormatter.coordinate(segment.outgoingHandle.angleDegrees))°"
+            )
+
+            print(
+                "    Incoming handle length: " +
+                "\(NumberFormatter.coordinate(segment.incomingHandle.length)) pt"
+            )
+
+            print(
+                "    Incoming handle angle: " +
+                "\(NumberFormatter.coordinate(segment.incomingHandle.angleDegrees))°"
+            )
+        }
+    }
+    
     private static func printStyle(
         _ style: MD70ObjectStyle
     ) {
@@ -564,6 +620,8 @@ extension MD70RoundedRectangle: CLIStyledObject {}
 extension MD70Circle: CLIStyledObject {}
 extension MD70Polygon: CLIStyledObject {}
 extension MD70Ellipse: CLIStyledObject {}
+extension MD70Bezier: CLIStyledObject {}
+
 
 // MARK: - Formatting
 
