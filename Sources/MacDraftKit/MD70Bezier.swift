@@ -25,6 +25,18 @@ public struct MD70BezierHandle: Equatable, Sendable {
             controlPoint.y - anchor.y
         )
     }
+    
+    public func isCollapsed(
+        tolerance: Double = 0.000_001
+    ) -> Bool {
+        length <= tolerance
+    }
+
+    public func isActive(
+        tolerance: Double = 0.000_001
+    ) -> Bool {
+        !isCollapsed(tolerance: tolerance)
+    }
 
     /// Clockwise visual angle from the positive X axis.
     ///
@@ -79,6 +91,8 @@ public struct MD70BezierSegment: Equatable, Sendable {
             controlPoint: control2
         )
     }
+    
+    
 }
 
 public struct MD70Bezier: MD70DrawingObject {
@@ -139,6 +153,8 @@ public struct MD70Bezier: MD70DrawingObject {
 
         return first == last
     }
+    
+    
 
     /// Bounds of all stored anchors and control points.
     ///

@@ -280,6 +280,60 @@ final class MD70VerifiedBezierTests: XCTestCase {
         XCTAssertEqual(bezier.rawRecord, record)
     }
 
+    func testCollapsedHandlesForStraightSegment() throws {
+        let points = [
+            MD70Point(x: 20, y: 60),
+            MD70Point(x: 20, y: 60),
+            MD70Point(x: 80, y: 60),
+            MD70Point(x: 80, y: 60),
+        ]
+
+        let segment = try XCTUnwrap(
+            decodeBezier(points: points).segments.first
+        )
+
+        XCTAssertTrue(
+            segment.outgoingHandle.isCollapsed()
+        )
+
+        XCTAssertTrue(
+            segment.incomingHandle.isCollapsed()
+        )
+    }
+
+    func testSingleActiveIncomingHandle() throws {
+        let points = [
+            MD70Point(x: 20, y: 60),
+            MD70Point(x: 20, y: 60),
+            MD70Point(x: 80, y: 75),
+            MD70Point(x: 80, y: 60),
+        ]
+
+        let segment = try XCTUnwrap(
+            decodeBezier(points: points).segments.first
+        )
+
+        XCTAssertTrue(
+            segment.outgoingHandle.isCollapsed()
+        )
+
+        XCTAssertTrue(
+            segment.incomingHandle.isActive()
+        )
+
+        XCTAssertEqual(
+            segment.incomingHandle.length,
+            15,
+            accuracy: MD70TestSupport.accuracy
+        )
+
+        XCTAssertEqual(
+            segment.incomingHandle.angleDegrees,
+            90,
+            accuracy: MD70TestSupport.accuracy
+        )
+    }
+    
     func testTruncatedRecordProducesEmptyGeometryAndNilStyle() {
         let record = Data(
             repeating: 0,

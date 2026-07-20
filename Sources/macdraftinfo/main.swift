@@ -378,6 +378,44 @@ struct MacDraftInfoCommand {
                 "    Incoming handle angle: " +
                 "\(NumberFormatter.coordinate(segment.incomingHandle.angleDegrees))°"
             )
+            
+            let outgoing = segment.outgoingHandle
+
+            print(
+                "    Outgoing handle: " +
+                (outgoing.isCollapsed() ? "collapsed" : "active")
+            )
+
+            print(
+                "    Outgoing handle length: " +
+                "\(NumberFormatter.coordinate(outgoing.length)) pt"
+            )
+
+            if outgoing.isActive() {
+                print(
+                    "    Outgoing handle angle: " +
+                    "\(NumberFormatter.coordinate(outgoing.angleDegrees))°"
+                )
+            }
+            
+            let incoming = segment.incomingHandle
+
+            print(
+                "    Incoming handle: " +
+                (incoming.isCollapsed() ? "collapsed" : "active")
+            )
+
+            print(
+                "    Incoming handle length: " +
+                "\(NumberFormatter.coordinate(incoming.length)) pt"
+            )
+
+            if incoming.isActive() {
+                print(
+                    "    Incoming handle angle: " +
+                    "\(NumberFormatter.coordinate(incoming.angleDegrees))°"
+                )
+            }
         }
     }
     
